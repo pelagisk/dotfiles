@@ -11,6 +11,7 @@ brew upgrade
 # Install GNU core utilities (those that come with macOS are outdated).
 # Don’t forget to add `$(brew --prefix coreutils)/libexec/gnubin` to `$PATH`.
 brew install coreutils
+# export PATH="$(brew --prefix coreutils)/libexec/gnubin:$PATH";
 
 # Install some other useful utilities like `sponge`.
 brew install moreutils
@@ -19,17 +20,18 @@ brew install findutils
 # Install GNU `sed`, overwriting the built-in `sed`.
 brew install gnu-sed --with-default-names
 # Install Bash 4.
+# NOTE: this is too complex for me right now, stick with the defaults for now...
 # Note: don’t forget to add `/usr/local/bin/bash` to `/etc/shells` before
 # running `chsh`. To do so, run `sudo chsh -s /usr/local/bin/bash`.
-brew install bash
-brew tap homebrew/versions
-brew install bash-completion2
+# brew install bash
+# brew tap homebrew/versions
+# brew install bash-completion2
 
-# Switch to using brew-installed bash as default shell
-if ! fgrep -q '/usr/local/bin/bash' /etc/shells; then
-  echo '/usr/local/bin/bash' | sudo tee -a /etc/shells;
-  chsh -s /usr/local/bin/bash;
-fi;
+# # Switch to using brew-installed bash as default shell
+# if ! fgrep -q '/usr/local/bin/bash' /etc/shells; then
+#   echo '/usr/local/bin/bash' | sudo tee -a /etc/shells;
+#   chsh -s /usr/local/bin/bash;
+# fi;
 
 # Install `wget` with IRI support.
 brew install wget --with-iri
@@ -37,8 +39,8 @@ brew install wget --with-iri
 # Install RingoJS and Narwhal.
 # Note that the order in which these are installed is important;
 # see http://git.io/brew-narwhal-ringo.
-brew install ringojs
-brew install narwhal
+# brew install ringojs
+# brew install narwhal
 
 # Install more recent versions of some macOS tools.
 brew install vim --with-override-system-vi
@@ -48,58 +50,98 @@ brew install homebrew/dupes/screen
 brew install homebrew/php/php56 --with-gmp
 
 # Install font tools.
-brew tap bramstein/webfonttools
-brew install sfnt2woff
-brew install sfnt2woff-zopfli
-brew install woff2
+# brew tap bramstein/webfonttools
+# brew install sfnt2woff
+# brew install sfnt2woff-zopfli
+# brew install woff2
 
 # Install some CTF tools; see https://github.com/ctfs/write-ups.
-brew install aircrack-ng
-brew install bfg
-brew install binutils
-brew install binwalk
-brew install cifer
-brew install dex2jar
-brew install dns2tcp
-brew install fcrackzip
-brew install foremost
-brew install hashpump
-brew install hydra
-brew install john
-brew install knock
-brew install netpbm
-brew install nmap
-brew install pngcheck
-brew install socat
-brew install sqlmap
-brew install tcpflow
-brew install tcpreplay
-brew install tcptrace
-brew install ucspi-tcp # `tcpserver` etc.
-brew install xpdf
-brew install xz
+# brew install aircrack-ng
+# brew install bfg
+# brew install binutils
+# brew install binwalk
+# brew install cifer
+# brew install dex2jar
+# brew install dns2tcp
+# brew install fcrackzip
+# brew install foremost
+# brew install hashpump
+# brew install hydra
+# brew install john
+# brew install knock
+# brew install netpbm
+# brew install nmap
+# brew install pngcheck
+# brew install socat
+# brew install sqlmap
+# brew install tcpflow
+# brew install tcpreplay
+# brew install tcptrace
+# brew install ucspi-tcp # `tcpserver` etc.
+# brew install xpdf
+# brew install xz
 
 # Install other useful binaries.
-brew install ack
-brew install dark-mode
-#brew install exiv2
-brew install git
-brew install git-lfs
-brew install imagemagick --with-webp
-brew install lua
-brew install lynx
-brew install p7zip
-brew install pigz
-brew install pv
-brew install rename
-brew install rhino
-brew install speedtest_cli
-brew install ssh-copy-id
-brew install testssl
-brew install tree
-brew install vbindiff
-brew install webkit2png
-brew install zopfli
+# brew install ack
+# brew install dark-mode
+# #brew install exiv2
+# brew install git
+# brew install git-lfs
+# brew install imagemagick --with-webp
+# brew install lua
+# brew install lynx
+# brew install p7zip
+# brew install pigz
+# brew install pv
+# brew install rename
+# brew install rhino
+# brew install speedtest_cli
+# brew install ssh-copy-id
+# brew install testssl
+# brew install tree
+# brew install vbindiff
+# brew install webkit2png
+# brew install zopfli
+
+# Various useful tools
+brew install sshfs
+# NOTE: don't forget to configure this and how to use it:
+# $ sudo mkdir /mnt/droplet
+# $ sudo sshfs -o allow_other,defer_permissions root@xxx.xxx.xxx.xxx:/ /mnt/droplet
+# $ sudo sshfs -o allow_other,defer_permissions,IdentityFile=~/.ssh/id_rsa root@xxx.xxx.xxx.xxx:/ /mnt/droplet
+# sudo umount /mnt/droplet
+
+brew install iterm2
+brew install emacs
+brew install npm
+brew install atom
+brew install transmission
+brew install vlc
+brew install evernote
+brew install spotify
+
+# Install scientific stack
+brew install python
+brew install python3
+brew tap homebrew/science
+brew tap samueljohn/python
+pip3 install nose
+brew install gfortran
+brew install numpy --with-openblas
+brew install scipy --with-openblas
+brew install matplotlib
+brew install zeromq
+pip3 install jinja2
+pip3 install tornado
+pip3 install pyzmq
+pip3 install ipython
+pip3 install pandas
+
+brew cask install julia
+
+# Install other programming languages I like
+
+brew cask install haskell-platform
 
 # Remove outdated versions from the cellar.
 brew cleanup
