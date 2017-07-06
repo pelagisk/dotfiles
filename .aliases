@@ -25,6 +25,11 @@ alias hs="history | grep"
 alias pxg="ps aux | grep"
 alias mkdir="mkdir -pv"
 
+# Source untracked file containing IP and username to SSH server
+source personal.sh
+alias lsv="ssh $SU_USERNAME@$SU_SERVER"
+alias mnt="sudo sshfs -o allow_other,defer_permissions,IdentityFile=~/.ssh/id_rsa root@$SU_SERVER:/ /mnt/bentisk"
+
 # Detect which `ls` flavor is in use
 if ls --color > /dev/null 2>&1; then # GNU `ls`
 	colorflag="--color"
