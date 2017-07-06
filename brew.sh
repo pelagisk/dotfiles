@@ -111,14 +111,14 @@ brew install sshfs
 # $ sudo sshfs -o allow_other,defer_permissions,IdentityFile=~/.ssh/id_rsa root@xxx.xxx.xxx.xxx:/ /mnt/droplet
 # sudo umount /mnt/droplet
 
-brew install iterm2
-brew install emacs
+brew cask install iterm2
+brew cask install emacs
 brew install npm
-brew install atom
-brew install transmission
-brew install vlc
-brew install evernote
-brew install spotify
+brew cask install atom
+brew cask install transmission
+brew cask install vlc
+brew cask install evernote
+brew cask install spotify
 
 # Install scientific stack
 brew install python
@@ -126,7 +126,7 @@ brew install python3
 brew tap homebrew/science
 brew tap samueljohn/python
 pip3 install nose
-brew install gfortran
+brew install gcc
 brew install numpy --with-openblas
 brew install scipy --with-openblas
 brew install matplotlib
