@@ -127,9 +127,9 @@ brew tap homebrew/science
 brew tap samueljohn/python
 pip3 install nose
 brew install gcc
-brew install numpy --with-openblas
-brew install scipy --with-openblas
-brew install matplotlib
+brew install numpy --with-openblas --with-python3
+brew install scipy --with-openblas --with-python3
+brew install matplotlib --with-tex --with-python3
 brew install zeromq
 pip3 install jinja2
 pip3 install tornado
