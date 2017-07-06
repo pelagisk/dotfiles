@@ -136,6 +136,7 @@ pip3 install jinja2
 pip3 install tornado
 pip3 install pyzmq
 pip3 install ipython
+pip3 install jupyter
 pip3 install pandas
 
 brew cask install julia
