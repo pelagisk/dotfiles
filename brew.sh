@@ -115,6 +115,7 @@ brew cask install iterm2
 brew cask install emacs
 brew install npm
 brew cask install atom
+brew cask install mactex
 brew cask install transmission
 brew cask install vlc
 brew cask install evernote
