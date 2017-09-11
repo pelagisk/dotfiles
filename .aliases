@@ -24,7 +24,6 @@ alias h="history"
 alias hs="history | grep"
 alias pxg="ps aux | grep"
 alias mkdir="mkdir -pv"
-
 # Source untracked file containing IP and username to SSH server
 source personal.sh
 alias lsv="ssh $SU_USERNAME@$SU_SERVER"
