@@ -41,6 +41,7 @@ function create_repo() {
         git add .
         git commit -m "First commit" -a
         git remote add origin ssh://$SU_USERNAME@$SU_SERVER/gitrepos/$1.git
+        git push origin master
 }
 
 # Detect which `ls` flavor is in use
