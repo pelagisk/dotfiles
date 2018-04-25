@@ -40,7 +40,7 @@ function create_repo() {
         echo ".DS_Store" >> .gitignore
         git add .
         git commit -m "First commit" -a
-        git remote add origin ssh://$SU_USERNAME@$SU_SERVER/gitrepos/$1.git
+        git remote add origin $SU_USERNAME@$SU_SERVER:/home/$SU_USERNAME/gitrepos/$1.git
         git push origin master
 }
 
