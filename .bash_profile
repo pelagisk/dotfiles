@@ -2,6 +2,7 @@
 export PATH="$HOME/bin:$PATH";
 
 export PATH="$HOME/Library/Haskell/bin:$PATH"
+# export PYTHONPATH="$HOME/Projects/tenpy:$PYTHONPATH"
 
 # Load the shell dotfiles, and then some:
 # * ~/.path can be used to extend `$PATH`.
@@ -48,3 +49,6 @@ complete -W "NSGlobalDomain" defaults;
 
 # Add `killall` tab completion for common apps
 complete -o "nospace" -W "Contacts Calendar Dock Finder Mail Safari iTunes SystemUIServer Terminal Twitter" killall;
+
+# Set gdb options
+echo "set startup-with-shell off" >> ~/.gdbinit
