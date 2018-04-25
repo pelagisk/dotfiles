@@ -34,10 +34,10 @@ function create_repo() {
 	ssh $SU_USERNAME@$SU_SERVER "mkdir /home/$SU_USERNAME/gitrepos/$1.git && cd /home/$SU_USERNAME/gitrepos/$1.git && git --bare init"
 	git init
 	echo "*.eps" > .gitignore
-        echo "*.png" > .gitignore
-        echo "*.pyc" > .gitignore
-        echo "*.jld" > .gitignore
-        echo ".DS_Store" > .gitignore
+        echo "*.png" >> .gitignore
+        echo "*.pyc" >> .gitignore
+        echo "*.jld" >> .gitignore
+        echo ".DS_Store" >> .gitignore
         git add .
         git commit -m "First commit" -a
         git remote add origin ssh://$SU_USERNAME@$SU_SERVER/gitrepos/$1.git
