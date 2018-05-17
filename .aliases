@@ -27,6 +27,7 @@ alias mkdir="mkdir -pv"
 # Source untracked file containing IP and username to SSH server
 source personal.sh
 alias lsv="ssh $SU_USERNAME@$SU_SERVER"
+alias lsv2="ssh $SU_USERNAME2@$SU_SERVER2"
 alias mnt="sshfs -o allow_other,defer_permissions,IdentityFile=~/.ssh/id_rsa $SU_USERNAME@$SU_SERVER:/home/$SU_USERNAME/ ~/bentisk/"
 alias umnt="umount ~/bentisk"
 alias nb="ssh -N -f -L localhost:8888:localhost:8888 $SU_USERNAME@$SU_SERVER"
